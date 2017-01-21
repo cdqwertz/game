@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://scripts/score.gd" type="Script" id=1]
+[ext_resource path="res://sprites/font/numbers.png" type="Texture" id=2]
+
+[node name="score" type="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 64.0
+margin/bottom = 64.0
+script/script = ExtResource( 1 )
+font = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" ]
+texture = ExtResource( 2 )
+
+

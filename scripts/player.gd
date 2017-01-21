@@ -3,7 +3,7 @@ extends RigidBody2D
 var jumps = 3
 var max_jumps = 3
 
-var zoom = Vector2(1, 1)
+var zoom = Vector2(1.5, 1.5)
 
 onready var particles = get_node("particles")
 onready var spawn = get_parent().get_node("spawn")
