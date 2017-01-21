@@ -2,8 +2,12 @@ extends RigidBody2D
 
 var jumps = 3
 var max_jumps = 3
+
+var zoom = Vector2(1, 1)
+
 onready var particles = get_node("particles")
 onready var spawn = get_parent().get_node("spawn")
+onready var camera = get_node("Camera2D")
 
 func _ready():
 	set_fixed_process(true)
@@ -50,3 +54,16 @@ func _unhandled_input(event):
 		jumps -= 1
 		particles.set_emitting(true)
 		set_linear_velocity(velocity)
+		
+	if event.is_action_pressed("zoom_in"):
+		if zoom.x > 0.4 and zoom.y > 0.4:
+			zoom.x -= 0.1
+			zoom.y -= 0.1
+		
+		camera.set_zoom(zoom)
+		
+	if event.is_action_pressed("zoom_out"):
+		if zoom.x < 2.5 and zoom.y < 2.5:
+			zoom.x += 0.1
+			zoom.y += 0.1
+		camera.set_zoom(zoom)
