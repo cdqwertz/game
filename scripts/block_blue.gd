@@ -12,10 +12,10 @@ func _process(delta):
 		object.set_linear_velocity(v)
 
 func _on_Area2d_body_enter(body):
-	if body.is_in_group("player"):
+	if body.is_in_group("player") or body.is_in_group("entity"):
 		objects.append(body)
 
 
 func _on_Area2d_body_exit(body):
-	if body.is_in_group("player"):
+	if body.is_in_group("player") or body.is_in_group("entity"):
 		objects.remove(objects.find(body))

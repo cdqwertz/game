@@ -71,6 +71,7 @@ transform/scale = Vector2( 1, 32.5 )
 transform/pos = Vector2( 6080, -352 )
 transform/scale = Vector2( 1, -1 )
 next_level = "res://scenes/level_3.tscn"
+box = false
 
 [node name="block_blue" parent="." instance=ExtResource( 4 )]
 
