@@ -214,7 +214,6 @@ transform/scale = Vector2( 2.00001, 1 )
 [node name="block_red7" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 6784, -2528 )
-transform/scale = Vector2( 1, 1 )
 
 [node name="block_blue" parent="." instance=ExtResource( 4 )]
 
