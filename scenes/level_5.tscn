@@ -338,6 +338,6 @@ transform/pos = Vector2( 3648, -128 )
 [node name="end" parent="." instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 7008, -2240 )
-next_level = "res://scenes/menu.tscn"
+next_level = "res://scenes/level_6.tscn"
 
 

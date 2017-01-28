@@ -10,6 +10,9 @@ func _process(delta):
 		var v = object.get_linear_velocity()
 		v.y = -600
 		object.set_linear_velocity(v)
+		
+		if object.is_in_group("player"):
+			object.jumps = object.max_jumps
 
 func _on_Area2d_body_enter(body):
 	if body.is_in_group("player") or body.is_in_group("entity"):
