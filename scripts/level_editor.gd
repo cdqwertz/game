@@ -17,6 +17,13 @@ func _unhandled_input(event):
 		pos = Vector2(floor(pos.x/64), floor(pos.y/64))
 		level.set_block(pos, selected_object)
 		level.update()
+	
+	if Input.is_mouse_button_pressed(2):
+		var pos = get_global_mouse_pos()
+		pos = pos - level.get_pos()
+		pos = Vector2(floor(pos.x/64), floor(pos.y/64))
+		level.set_block(pos, -1)
+		level.update()
 		
 	if event.is_action_pressed("zoom_in"):
 		if zoom.x > 0.4 and zoom.y > 0.4:
@@ -31,13 +38,16 @@ func _unhandled_input(event):
 			zoom.y += 0.1
 		camera.set_zoom(zoom)
 		
-	if event.is_action_pressed("ui_select"):
-		level.export_level()
+	if event.is_action_pressed("play_level"):
+		level.play_level()
+		
+	if event.is_action_pressed("back"):
+		get_tree().change_scene("res://scenes/menu.tscn")
 		
 func _process(delta):
-	var speed = 300
-	if Input.is_action_pressed("fast"):
-		speed = 800
+	var speed = 800
+	if Input.is_action_pressed("slow"):
+		speed = 300
 	
 	var v = Vector2(0, 0)
 	if Input.is_action_pressed("down"):

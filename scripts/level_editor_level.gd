@@ -10,6 +10,13 @@ func _ready():
 	for t in ["grey", "blue", "orange", "red"]:
 		textures.append(load("res://sprites/" + t + ".png"))
 	
+	if not(global.get_level_editor_data().empty()):
+		import_level(global.get_level_editor_data())
+	else:
+		clear_level()
+
+func clear_level():
+	data = []
 	for i in range(0, width):
 		var a = []
 		for j in range(0, height):
@@ -100,40 +107,74 @@ func _draw():
 	
 func export_level():
 	var d = str2var(var2str(data))
+	var objects = []
+	
+	for t in textures:
+		objects.append([])
 	
 	for i in range(0, d.size()):
 		for j in range(0, d[i].size()):
-			if i > 0 and j > 0:
-				if d[i][j] != -1 and d[i][j] != d[i-1][j] and d[i][j] != d[i][j-1]:
-					print(i, ", ", j)
-					var block = d[i][j]
-					var search_x = true
-					var x = 0
-					var h = []
-					while search_x:
-						if d[i+x][j] != block:
-							x -= 1
-							search_x = false
-						else:
-							var search_y = true
-							var y = 0
-							while search_y:
-								if j+y >= height:
-									h.append(y)
-									search_y = false
-									
-								elif d[i+x][j+y] != block:
-									h.append(y)
-									search_y = false
-								y += 1
-						x += 1
+			if d[i][j] != -1 and ((i > 0 and d[i][j] != d[i-1][j]) or i == 0) and ((j > 0 and d[i][j] != d[i][j-1]) or j == 0):
+				var block = d[i][j]
+				var search_x = true
+				var x = 0
+				var h = []
+				while search_x:
+					if i+x >= width:
+						x -= 1
+						search_x = false
+					elif d[i+x][j] != block:
+						x -= 1
+						search_x = false
+					else:
+						var search_y = true
+						var y = 0
+						while search_y:
+							if j+y >= height:
+								h.append(y)
+								search_y = false
+								
+							elif d[i+x][j+y] != block:
+								h.append(y)
+								search_y = false
+							y += 1
+					x += 1
+				
+				var y = 1
+				if h.size() > 0:
+					h.sort()
+					y = h[0]
 					
-					var y = 1
-					if h.size() > 0:
-						h.sort()
-						y = h[0]
-						
-					#print(str(randi()) + ": " + str(x) + " " + str(y))
-					for k in range(i, i+x):
-						for l in range(j, j+y):
-							d[k][l] = -1
+				objects[block].append([i, j, x, y])
+					
+				#print(str(randi()) + ": " + str(x) + " " + str(y))
+				for k in range(i, i+x):
+					for l in range(j, j+y):
+						d[k][l] = -1
+							
+	return [objects, get_pos().y/64, width, height]
+	
+func play_level():
+	global.set_level_editor_data(export_level())
+	get_tree().change_scene("res://scenes/level_editor_play.tscn")
+	
+func import_level(d):
+	set_pos(Vector2(0, d[1]*64))
+	width = d[2] + 1
+	height = d[3] + 1
+	clear_level()
+	
+	var type = 0
+	for i in d[0]:
+		for object in i:
+			var x = object[0]
+			var y = object[1]
+			var w = object[2]
+			var h = object[3]
+			
+			for k in range(x, x+w):
+				for l in range(y, y+h):
+					data[k][l] = type
+		type += 1
+		
+	update()

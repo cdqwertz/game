@@ -62,6 +62,33 @@ randomness/direction = 100.0
 randomness/spread = 1.0
 randomness/linear_velocity = 1.0
 
+[node name="particles2" type="Particles2D" parent="."]
+
+config/amount = 8
+config/lifetime = 5.0
+config/time_scale = 10.0
+config/local_space = false
+config/texture = ExtResource( 2 )
+params/direction = 0.0
+params/spread = 40.0
+params/linear_velocity = 20.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 1.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 100.0
+randomness/spread = 1.0
+randomness/linear_velocity = 1.0
+
 [node name="Sprite" type="Sprite" parent="."]
 
 transform/scale = Vector2( 4, 4 )

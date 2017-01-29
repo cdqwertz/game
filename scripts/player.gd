@@ -6,6 +6,7 @@ var max_jumps = 3
 var zoom = Vector2(1.5, 1.5)
 
 onready var particles = get_node("particles")
+onready var particles2 = get_node("particles2")
 onready var spawn = get_parent().get_node("spawn")
 onready var camera = get_node("Camera2D")
 
@@ -33,6 +34,11 @@ func _fixed_process(delta):
 		if Input.is_action_pressed("jump"):
 			velocity.y = -300
 			particles.set_emitting(true)
+			particles2.set_emitting(false)
+		else:
+			particles2.set_emitting(true)
+	else:
+		particles2.set_emitting(false)
 	
 	if Input.is_action_pressed("left"):
 		if velocity.x > 0:
@@ -67,3 +73,6 @@ func _unhandled_input(event):
 			zoom.x += 0.1
 			zoom.y += 0.1
 		camera.set_zoom(zoom)
+		
+	if event.is_action_pressed("back"):
+		get_tree().change_scene("res://scenes/menu.tscn")
