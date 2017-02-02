@@ -28,15 +28,17 @@ func _fixed_process(delta):
 	
 	var bodies = get_colliding_bodies()
 	if jumps < 1 and bodies.size() > 0:
-		jumps = max_jumps
+		if not(bodies.size() == 1 and bodies[0].is_in_group("not_climbable")):
+			jumps = max_jumps
 		
 	if bodies.size() > 0:
-		if Input.is_action_pressed("jump"):
-			velocity.y = -300
-			particles.set_emitting(true)
-			particles2.set_emitting(false)
-		else:
-			particles2.set_emitting(true)
+		if not(bodies.size() == 1 and bodies[0].is_in_group("not_climbable")):
+			if Input.is_action_pressed("jump"):
+				velocity.y = -300
+				particles.set_emitting(true)
+				particles2.set_emitting(false)
+			else:
+				particles2.set_emitting(true)
 	else:
 		particles2.set_emitting(false)
 	
@@ -75,4 +77,4 @@ func _unhandled_input(event):
 		camera.set_zoom(zoom)
 		
 	if event.is_action_pressed("back"):
-		get_tree().change_scene("res://scenes/menu.tscn")
+		get_tree().change_scene("res://scenes/select_level.tscn")

@@ -17,7 +17,7 @@ func _unhandled_input(event):
 		
 	if item != -1 and event.type == InputEvent.MOUSE_BUTTON and event.button_index == 1:
 		if item == 0:
-			get_tree().change_scene("res://scenes/level_1.tscn")
+			get_tree().change_scene("res://scenes/select_level.tscn")
 		else:
 			get_tree().change_scene("res://scenes/level_editor.tscn")
 

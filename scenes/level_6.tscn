@@ -206,6 +206,7 @@ transform/pos = Vector2( 6656, -704 )
 
 transform/pos = Vector2( 12640, -1152 )
 next_level = "res://scenes/menu.tscn"
+level = 6
 
 [node name="coin" parent="." instance=ExtResource( 8 )]
 

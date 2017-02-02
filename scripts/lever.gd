@@ -9,7 +9,7 @@ func _ready():
 	pass
 
 func _on_area_1_body_enter(body):
-	if body.is_in_group("player"):
+	if body.is_in_group("player") or body.is_in_group("box"):
 		state = !state
 		
 		if state == false:

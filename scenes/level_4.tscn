@@ -19,6 +19,7 @@
 
 transform/pos = Vector2( 5536, -736 )
 next_level = "res://scenes/level_5.tscn"
+level = 4
 
 [node name="block" parent="." instance=ExtResource( 3 )]
 

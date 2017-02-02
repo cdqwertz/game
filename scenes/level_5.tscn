@@ -339,5 +339,6 @@ transform/pos = Vector2( 3648, -128 )
 
 transform/pos = Vector2( 7008, -2240 )
 next_level = "res://scenes/level_6.tscn"
+level = 5
 
 
