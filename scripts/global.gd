@@ -2,7 +2,7 @@ extends Node
 
 var time = 0
 var coins = 0
-var level = 8
+var level = 1
 
 var level_editor_data = []
 

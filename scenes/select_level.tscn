@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://scripts/select_level.gd" type="Script" id=1]
 [ext_resource path="res://objects/start_level.tscn" type="PackedScene" id=2]
@@ -8,8 +8,7 @@
 [ext_resource path="res://objects/block_blue.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/block_orange.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/block_cyan.tscn" type="PackedScene" id=8]
-[ext_resource path="res://objects/box.tscn" type="PackedScene" id=9]
-[ext_resource path="res://objects/score.tscn" type="PackedScene" id=10]
+[ext_resource path="res://objects/score.tscn" type="PackedScene" id=9]
 
 [sub_resource type="LineShape2D" id=1]
 
@@ -119,10 +118,6 @@ transform/scale = Vector2( 3, 1 )
 transform/pos = Vector2( 3104, -16 )
 transform/scale = Vector2( 4, 0.5 )
 
-[node name="box" parent="." instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 2304, 128 )
-
 [node name="wall" type="StaticBody2D" parent="." groups=[ "not_climbable" ]]
 
 editor/display_folded = true
@@ -152,7 +147,7 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
-[node name="score" parent="gui" instance=ExtResource( 10 )]
+[node name="score" parent="gui" instance=ExtResource( 9 )]
 
 margin/left = 32.0
 margin/top = 32.0
