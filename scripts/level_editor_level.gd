@@ -7,7 +7,7 @@ var width = 32
 var height = 16
 
 func _ready():
-	for t in ["grey", "blue", "orange", "red"]:
+	for t in ["grey", "blue", "orange", "red", "cyan", "lever_off", "box"]:
 		textures.append(load("res://sprites/" + t + ".png"))
 	
 	if not(global.get_level_editor_data().empty()):
@@ -114,7 +114,10 @@ func export_level():
 	
 	for i in range(0, d.size()):
 		for j in range(0, d[i].size()):
-			if d[i][j] != -1 and ((i > 0 and d[i][j] != d[i-1][j]) or i == 0) and ((j > 0 and d[i][j] != d[i][j-1]) or j == 0):
+			if d[i][j] == 5 or d[i][j] == 6:
+				var block = d[i][j]
+				objects[block].append([i, j, 1, 1])
+			elif d[i][j] != -1 and ((i > 0 and d[i][j] != d[i-1][j]) or i == 0) and ((j > 0 and d[i][j] != d[i][j-1]) or j == 0):
 				var block = d[i][j]
 				var search_x = true
 				var x = 0

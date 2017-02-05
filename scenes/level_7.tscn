@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://objects/lever.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://objects/box.tscn" type="PackedScene" id=8]
 [ext_resource path="res://objects/block_orange.tscn" type="PackedScene" id=9]
 [ext_resource path="res://objects/end.tscn" type="PackedScene" id=10]
+[ext_resource path="res://objects/coin.tscn" type="PackedScene" id=11]
 
 [node name="world" type="Node2D"]
 
@@ -56,6 +57,8 @@ transform/pos = Vector2( 1408, -224 )
 [node name="spawn" type="Node2D" parent="."]
 
 [node name="player" parent="." instance=ExtResource( 2 )]
+
+is_level_editor = false
 
 [node name="gui" parent="." instance=ExtResource( 3 )]
 
@@ -267,5 +270,57 @@ transform/scale = Vector2( 10, 1 )
 
 transform/pos = Vector2( 1056, -672 )
 level = 7
+
+[node name="coin" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 576, 192 )
+
+[node name="coin1" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 1472, 384 )
+
+[node name="coin2" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 2368, 384 )
+
+[node name="coin3" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 2496, -192 )
+
+[node name="coin4" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 2592, -736 )
+
+[node name="coin5" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 2208, -736 )
+
+[node name="coin6" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 1696, -736 )
+
+[node name="coin7" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 2176, -1504 )
+
+[node name="coin8" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 2624, -1632 )
+
+[node name="coin9" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 3136, -1056 )
+
+[node name="coin11" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 2784, -928 )
+
+[node name="coin12" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 2784, -1312 )
+
+[node name="coin10" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 2944, -1440 )
 
 

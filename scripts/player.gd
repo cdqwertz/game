@@ -10,6 +10,8 @@ onready var particles2 = get_node("particles2")
 onready var spawn = get_parent().get_node("spawn")
 onready var camera = get_node("Camera2D")
 
+export var is_level_editor = false
+
 func _ready():
 	set_fixed_process(true)
 	set_contact_monitor(true)
@@ -77,4 +79,7 @@ func _unhandled_input(event):
 		camera.set_zoom(zoom)
 		
 	if event.is_action_pressed("back"):
-		get_tree().change_scene("res://scenes/select_level.tscn")
+		if not(is_level_editor):
+			get_tree().change_scene("res://scenes/select_level.tscn")
+		else:
+			get_tree().change_scene("res://scenes/level_editor.tscn")
