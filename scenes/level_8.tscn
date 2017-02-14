@@ -14,6 +14,8 @@
 
 [node name="world" type="Node2D"]
 
+transform/pos = Vector2( 0, 9 )
+
 [node name="lever" parent="." instance=ExtResource( 1 )]
 
 transform/pos = Vector2( 320, 128 )
@@ -112,6 +114,7 @@ transform/scale = Vector2( 1, 3 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
 
+transform/pos = Vector2( 0, -9 )
 is_level_editor = false
 
 [node name="gui" parent="." instance=ExtResource( 4 )]

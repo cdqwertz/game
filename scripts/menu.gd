@@ -16,6 +16,7 @@ func _unhandled_input(event):
 			select(0)
 		
 	if item != -1 and event.type == InputEvent.MOUSE_BUTTON and event.button_index == 1:
+		global.load_game()
 		if item == 0:
 			get_tree().change_scene("res://scenes/select_level.tscn")
 		else:

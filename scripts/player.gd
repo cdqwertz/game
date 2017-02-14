@@ -80,6 +80,8 @@ func _unhandled_input(event):
 		
 	if event.is_action_pressed("back"):
 		if not(is_level_editor):
+			global.coins = 0
+			global.time = 0
 			get_tree().change_scene("res://scenes/select_level.tscn")
 		else:
 			get_tree().change_scene("res://scenes/level_editor.tscn")

@@ -66,6 +66,8 @@ transform/pos = Vector2( 2944, -64 )
 
 [node name="player" parent="." instance=ExtResource( 4 )]
 
+is_level_editor = false
+
 [node name="spawn" type="Node2D" parent="."]
 
 [node name="block" parent="." instance=ExtResource( 5 )]
@@ -153,5 +155,24 @@ margin/left = 32.0
 margin/top = 32.0
 margin/right = 61.6
 margin/bottom = 73.6
+
+[node name="best_time" parent="gui" instance=ExtResource( 9 )]
+
+anchor/left = 1
+anchor/right = 1
+margin/left = 160.0
+margin/top = 32.0
+margin/right = 135.0
+margin/bottom = 67.0
+font = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "-" ]
+
+[node name="best_coins" parent="gui" instance=ExtResource( 9 )]
+
+anchor/left = 1
+anchor/right = 1
+margin/left = 160.0
+margin/top = 96.0
+margin/right = 135.0
+margin/bottom = 131.0
 
 

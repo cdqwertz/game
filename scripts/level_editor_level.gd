@@ -104,7 +104,7 @@ func _draw():
 		
 	var y = get_pos().y
 	draw_line(Vector2(0, 1024-y), Vector2((width+1)*64, 1024 - y), Color(1, 0, 0))
-	
+
 func export_level():
 	var d = str2var(var2str(data))
 	var objects = []

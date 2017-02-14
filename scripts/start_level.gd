@@ -18,6 +18,7 @@ func _unhandled_input(event):
 	if (event.is_action_pressed("down") or event.is_action_pressed("play_level")) and objects.size() > 0:
 		if level_name == "":
 			level_name = "level_" + number
+			
 		get_tree().change_scene("res://scenes/" + level_name + ".tscn")
 	
 	if event.is_action_pressed("back"):
@@ -26,9 +27,12 @@ func _unhandled_input(event):
 func body_enter(body):
 	if body.is_in_group("player"):
 		objects.append(body)
-		if int(number) == global.level:
+		var n = int(number)
+		if n == global.level:
 			text_press_enter.show()
 		get_parent().set_level(number)
+		get_parent().set_best_coins(global.get_best_coins(n))
+		get_parent().set_best_time(global.get_best_time(n))
 
 func body_exit(body):
 	if body.is_in_group("player"):

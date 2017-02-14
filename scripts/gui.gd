@@ -10,7 +10,9 @@ func _ready():
 	
 func _process(delta):
 	time += delta
-	text_time.set_text(str(round(time*10)))
+	var t = round(time*10)
+	text_time.set_text(str(t))
+	global.time = t
 
 func update_gui():
 	text_coins.set_text(str(global.coins))
