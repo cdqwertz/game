@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=14 format=1]
 
 [ext_resource path="res://scripts/level_editor.gd" type="Script" id=1]
 [ext_resource path="res://scripts/level_editor_level.gd" type="Script" id=2]
@@ -9,6 +9,10 @@
 [ext_resource path="res://sprites/cyan.png" type="Texture" id=7]
 [ext_resource path="res://sprites/lever_off.png" type="Texture" id=8]
 [ext_resource path="res://sprites/box.png" type="Texture" id=9]
+[ext_resource path="res://sprites/gui/menu.png" type="Texture" id=10]
+[ext_resource path="res://sprites/gui/menu_pressed.png" type="Texture" id=11]
+[ext_resource path="res://sprites/gui/menu_hover.png" type="Texture" id=12]
+[ext_resource path="res://sprites/gui/new_level.png" type="Texture" id=13]
 
 [node name="level_editor" type="Node2D"]
 
@@ -163,6 +167,55 @@ shortcut = null
 textures/normal = ExtResource( 9 )
 params/scale = Vector2( 2, 2 )
 
+[node name="button_menu" type="TextureButton" parent="gui"]
+
+anchor/left = 1
+anchor/right = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 64.0
+margin/top = 32.0
+margin/right = 32.0
+margin/bottom = 64.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 10 )
+textures/pressed = ExtResource( 11 )
+textures/hover = ExtResource( 12 )
+params/scale = Vector2( 2, 2 )
+
+[node name="menu" type="Control" parent="gui"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 960.0
+margin/top = 96.0
+margin/right = 992.0
+margin/bottom = 320.0
+
+[node name="button_new_level" type="TextureButton" parent="gui/menu"]
+
+anchor/left = 1
+anchor/right = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 32.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 32.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 13 )
+params/scale = Vector2( 2, 2 )
+
 [connection signal="pressed" from="gui/button_block" to="." method="select" binds= [ 0 ]]
 
 [connection signal="pressed" from="gui/button_block_blue" to="." method="select" binds= [ 1 ]]
@@ -176,5 +229,9 @@ params/scale = Vector2( 2, 2 )
 [connection signal="pressed" from="gui/button_block_lever" to="." method="select" binds= [ 5 ]]
 
 [connection signal="pressed" from="gui/button_block_box" to="." method="select" binds= [ 6 ]]
+
+[connection signal="pressed" from="gui/button_menu" to="." method="_on_menu_pressed"]
+
+[connection signal="pressed" from="gui/menu/button_new_level" to="." method="_on_button_new_level_pressed"]
 
 

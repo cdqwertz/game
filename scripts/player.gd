@@ -64,7 +64,7 @@ func _unhandled_input(event):
 		jumps -= 1
 		particles.set_emitting(true)
 		set_linear_velocity(velocity)
-		
+	
 	if event.is_action_pressed("zoom_in"):
 		if zoom.x > 0.4 and zoom.y > 0.4:
 			zoom.x -= 0.1

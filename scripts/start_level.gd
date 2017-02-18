@@ -15,7 +15,7 @@ func _ready():
 	set_process_unhandled_input(true)
 	
 func _unhandled_input(event):
-	if (event.is_action_pressed("down") or event.is_action_pressed("play_level")) and objects.size() > 0:
+	if (event.is_action_pressed("play_level")) and objects.size() > 0:
 		if level_name == "":
 			level_name = "level_" + number
 			

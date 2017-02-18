@@ -10,7 +10,7 @@ var all_times = []
 var level_editor_data = []
 
 func _ready():
-	pass
+	load_game()
 	
 func add_coin(c=1):
 	coins += c

@@ -14,6 +14,7 @@
 [node name="player" parent="." instance=ExtResource( 1 )]
 
 transform/pos = Vector2( 0, -32 )
+is_level_editor = false
 
 [node name="spawn" type="Node2D" parent="."]
 

@@ -2,11 +2,14 @@ extends Node2D
 
 var selected_object = 0
 var zoom = Vector2(1.5, 1.5)
+var show_menu = false
 
+onready var menu = get_node("gui/menu")
 onready var camera = get_node("Camera2D")
 onready var level = get_node("level")
 
 func _ready():
+	menu.hide()
 	set_process(true)
 	set_process_unhandled_input(true)
 
@@ -64,3 +67,20 @@ func _process(delta):
 
 func select(s):
 	selected_object = s
+
+func _on_menu_pressed():
+	show_menu = !show_menu
+	if show_menu:
+		menu.show()
+	else:
+		menu.hide()
+
+func _on_button_new_level_pressed():
+	level.set_pos(Vector2(0, 0))
+	level.width = 32
+	level.height = 16
+	level.clear_level()
+	
+	show_menu = false
+	menu.hide()
+	level.update()

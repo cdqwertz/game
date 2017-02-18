@@ -16,6 +16,8 @@
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 
+is_level_editor = false
+
 [node name="block" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( -32, 224 )
@@ -317,7 +319,7 @@ transform/pos = Vector2( 4096, -384 )
 
 [node name="coin16" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 4832, -384 )
+transform/pos = Vector2( 4320, -384 )
 
 [node name="coin7" parent="." instance=ExtResource( 8 )]
 
