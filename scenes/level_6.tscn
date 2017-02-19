@@ -14,7 +14,6 @@
 [node name="player" parent="." instance=ExtResource( 1 )]
 
 transform/pos = Vector2( 0, -32 )
-is_level_editor = false
 
 [node name="spawn" type="Node2D" parent="."]
 
@@ -152,6 +151,11 @@ transform/scale = Vector2( 14.5, 1 )
 transform/pos = Vector2( 2128, -640 )
 transform/scale = Vector2( 14.5, 1 )
 
+[node name="block_blue10" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 4208, -416 )
+transform/scale = Vector2( 4.5, 1 )
+
 [node name="block_blue2" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 3520, -832 )
@@ -256,5 +260,13 @@ transform/pos = Vector2( 12096, -1184 )
 [node name="coin5" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 3520, -1152 )
+
+[node name="coin12" parent="." instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 4256, -320 )
+
+[node name="coin13" parent="." instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 2816, -544 )
 
 

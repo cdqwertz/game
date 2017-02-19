@@ -84,3 +84,16 @@ func _on_button_new_level_pressed():
 	show_menu = false
 	menu.hide()
 	level.update()
+
+
+func _on_button_load_level_pressed():
+	level.load_level("user://level.txt")
+	show_menu = false
+	menu.hide()
+	level.update()
+
+func _on_button_save_level_pressed():
+	level.save_level("user://level.txt")
+	show_menu = false
+	menu.hide()
+	level.update()

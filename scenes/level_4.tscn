@@ -144,6 +144,14 @@ transform/pos = Vector2( 1664, -128 )
 
 transform/pos = Vector2( 1696, -608 )
 
+[node name="coin9" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 1888, -1024 )
+
+[node name="coin10" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 1472, 32 )
+
 [node name="coin3" parent="." instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 2240, -64 )

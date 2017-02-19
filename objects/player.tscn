@@ -32,6 +32,7 @@ velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
 script/script = ExtResource( 1 )
+is_level_editor = false
 
 [node name="particles" type="Particles2D" parent="."]
 

@@ -3,7 +3,7 @@ extends Node2D
 
 func _ready():
 	var objects = []
-	for i in ["block", "block_blue", "block_orange", "block_red", "block_cyan", "lever", "box"]:
+	for i in ["block", "block_blue", "block_orange", "block_red", "block_cyan", "lever", "box", "end"]:
 		objects.append(load("res://objects/" + i + ".tscn"))
 	
 	var d = global.get_level_editor_data()
@@ -20,6 +20,9 @@ func _ready():
 			my_object.set_pos(Vector2(x*64, y*64))
 			my_object.set_scale(Vector2(w, h))
 			add_child(my_object)
+			
+			if type == 7:
+				my_object.is_level_editor = true
 		type += 1
 		
 	set_process_unhandled_input(true)

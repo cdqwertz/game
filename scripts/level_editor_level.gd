@@ -7,7 +7,7 @@ var width = 32
 var height = 16
 
 func _ready():
-	for t in ["grey", "blue", "orange", "red", "cyan", "lever_off", "box"]:
+	for t in ["grey", "blue", "orange", "red", "cyan", "lever_off", "box", "end"]:
 		textures.append(load("res://sprites/" + t + ".png"))
 	
 	if not(global.get_level_editor_data().empty()):
@@ -114,7 +114,7 @@ func export_level():
 	
 	for i in range(0, d.size()):
 		for j in range(0, d[i].size()):
-			if d[i][j] == 5 or d[i][j] == 6:
+			if d[i][j] == 5 or d[i][j] == 6 or d[i][j] == 7:
 				var block = d[i][j]
 				objects[block].append([i, j, 1, 1])
 			elif d[i][j] != -1 and ((i > 0 and d[i][j] != d[i-1][j]) or i == 0) and ((j > 0 and d[i][j] != d[i][j-1]) or j == 0):
@@ -181,3 +181,27 @@ func import_level(d):
 		type += 1
 		
 	update()
+	
+func save_level(path):
+	var d = {"data" : export_level()}
+	
+	var my_file = File.new()
+	my_file.open(path, my_file.WRITE)
+	my_file.store_string(d.to_json())
+	my_file.close()
+	
+func load_level(path):
+	var d = {}
+	
+	var my_file = File.new()
+	if my_file.file_exists(path):
+		my_file.open(path, my_file.READ)
+		
+		var content = my_file.get_as_text()
+		print(content)
+		d.parse_json(content)
+			
+		my_file.close()
+	
+		if d.has("data"):
+			import_level(d["data"])
