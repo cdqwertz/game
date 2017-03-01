@@ -3,13 +3,15 @@ extends StaticBody2D
 var state = false
 var states = {}
 
+export var always_on = false
+
 onready var collider = get_node("CollisionShape2D")
 
 func _ready():
 	set_process(true)
 	
 func _process(delta):
-	if state:
+	if state or always_on:
 		set_opacity(0.3)
 		collider.set_trigger(true)
 	else:

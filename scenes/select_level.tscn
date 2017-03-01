@@ -60,13 +60,16 @@ number = "7"
 transform/pos = Vector2( 3360, -384 )
 number = "8"
 
+[node name="start_9" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 3616, -384 )
+number = "9"
+
 [node name="lever" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 2944, -64 )
 
 [node name="player" parent="." instance=ExtResource( 4 )]
-
-is_level_editor = false
 
 [node name="spawn" type="Node2D" parent="."]
 
@@ -119,6 +122,7 @@ transform/scale = Vector2( 3, 1 )
 
 transform/pos = Vector2( 3104, -16 )
 transform/scale = Vector2( 4, 0.5 )
+always_on = false
 
 [node name="wall" type="StaticBody2D" parent="." groups=[ "not_climbable" ]]
 

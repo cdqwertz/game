@@ -21,6 +21,9 @@ func _ready():
 	if global.level > 1:
 		var last_level = get_node("start_" + str(global.level - 1))
 		my_spawn.set_pos(last_level.get_pos() + Vector2(0, -32))
+		
+	if global.last_level > 0:
+		var last_level = get_node("start_" + str(global.last_level))
 		my_player.set_pos(last_level.get_pos()+ Vector2(0, -32))
 	
 func set_level(name):

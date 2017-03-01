@@ -18,7 +18,7 @@ func _unhandled_input(event):
 	if (event.is_action_pressed("play_level")) and objects.size() > 0:
 		if level_name == "":
 			level_name = "level_" + number
-			
+		global.last_level = int(number)
 		get_tree().change_scene("res://scenes/" + level_name + ".tscn")
 	
 	if event.is_action_pressed("back"):

@@ -3,6 +3,7 @@ extends Node
 var time = 0
 var coins = 0
 var level = 1
+var last_level = 1
 
 var all_coins = []
 var all_times = []
