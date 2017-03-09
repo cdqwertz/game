@@ -65,6 +65,11 @@ number = "8"
 transform/pos = Vector2( 3616, -384 )
 number = "9"
 
+[node name="start_10" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 4128, -704 )
+number = "10"
+
 [node name="lever" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 2944, -64 )
@@ -95,8 +100,13 @@ transform/scale = Vector2( 11, 1 )
 
 [node name="block3" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 3472, -320 )
-transform/scale = Vector2( 7.49999, 1 )
+transform/pos = Vector2( 3536, -320 )
+transform/scale = Vector2( 9.49999, 1 )
+
+[node name="block5" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 4064, -640 )
+transform/scale = Vector2( 7, 1 )
 
 [node name="block_blue" parent="." instance=ExtResource( 6 )]
 
@@ -123,6 +133,12 @@ transform/scale = Vector2( 3, 1 )
 transform/pos = Vector2( 3104, -16 )
 transform/scale = Vector2( 4, 0.5 )
 always_on = false
+
+[node name="block_cyan" parent="." instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 3808, -512 )
+transform/scale = Vector2( 1, 5 )
+always_on = true
 
 [node name="wall" type="StaticBody2D" parent="." groups=[ "not_climbable" ]]
 

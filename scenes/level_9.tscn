@@ -21,22 +21,14 @@ transform/pos = Vector2( 448, 64 )
 [node name="lever1" parent="." instance=ExtResource( 1 )]
 
 transform/pos = Vector2( 1408, -1152 )
-transform/scale = Vector2( 1, 1 )
-
-[node name="lever4" parent="." instance=ExtResource( 1 )]
-
-transform/pos = Vector2( 2912, 64 )
-transform/scale = Vector2( 1, 1 )
 
 [node name="lever2" parent="." instance=ExtResource( 1 )]
 
 transform/pos = Vector2( 1856, -1152 )
-transform/scale = Vector2( 1, 1 )
 
 [node name="lever3" parent="." instance=ExtResource( 1 )]
 
 transform/pos = Vector2( 3488, -896 )
-transform/scale = Vector2( 1, 1 )
 
 [node name="spawn" type="Node2D" parent="."]
 
@@ -63,11 +55,6 @@ transform/scale = Vector2( 12, 1 )
 
 transform/pos = Vector2( 1440, -1088 )
 transform/scale = Vector2( 15, 1 )
-
-[node name="block9" parent="." instance=ExtResource( 4 )]
-
-transform/pos = Vector2( 1520, 128 )
-transform/scale = Vector2( 15.5, 1 )
 
 [node name="block13" parent="." instance=ExtResource( 4 )]
 
@@ -112,7 +99,6 @@ transform/scale = Vector2( 2.5, 16 )
 [node name="block16" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 3232, -896 )
-transform/scale = Vector2( 1, 1 )
 
 [node name="block11" parent="." instance=ExtResource( 4 )]
 
@@ -121,8 +107,8 @@ transform/scale = Vector2( 7, 1 )
 
 [node name="block20" parent="." instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 1056, -480 )
-transform/scale = Vector2( 1, 18 )
+transform/pos = Vector2( 1056, -448 )
+transform/scale = Vector2( 1, 19 )
 
 [node name="block8" parent="." instance=ExtResource( 4 )]
 
@@ -165,7 +151,7 @@ always_on = false
 
 transform/pos = Vector2( 3104, -416 )
 transform/scale = Vector2( 3, 16 )
-always_on = false
+always_on = true
 
 [node name="block_cyan1" parent="." instance=ExtResource( 5 )]
 
@@ -262,6 +248,11 @@ transform/scale = Vector2( 14, 1 )
 
 transform/pos = Vector2( 2320, 128 )
 transform/scale = Vector2( 9.5, 1 )
+
+[node name="block_orange1" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 1552, 128 )
+transform/scale = Vector2( 14.5, 1 )
 
 [node name="block_blue" parent="." instance=ExtResource( 8 )]
 
