@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://scripts/select_level.gd" type="Script" id=1]
 [ext_resource path="res://objects/start_level.tscn" type="PackedScene" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://objects/block_blue.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/block_orange.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/block_cyan.tscn" type="PackedScene" id=8]
-[ext_resource path="res://objects/score.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objects/block_purple.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objects/score.tscn" type="PackedScene" id=10]
 
 [sub_resource type="LineShape2D" id=1]
 
@@ -70,6 +71,16 @@ number = "9"
 transform/pos = Vector2( 4128, -704 )
 number = "10"
 
+[node name="start_11" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 4672, -832 )
+number = "11"
+
+[node name="start_12" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 4960, -832 )
+number = "12"
+
 [node name="lever" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 2944, -64 )
@@ -108,6 +119,11 @@ transform/scale = Vector2( 9.49999, 1 )
 transform/pos = Vector2( 4064, -640 )
 transform/scale = Vector2( 7, 1 )
 
+[node name="block6" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 4816, -768 )
+transform/scale = Vector2( 8.50001, 1 )
+
 [node name="block_blue" parent="." instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 784, 192 )
@@ -140,6 +156,11 @@ transform/pos = Vector2( 3808, -512 )
 transform/scale = Vector2( 1, 5 )
 always_on = true
 
+[node name="block_purple" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 4416, -768 )
+transform/scale = Vector2( 4, 1 )
+
 [node name="wall" type="StaticBody2D" parent="." groups=[ "not_climbable" ]]
 
 editor/display_folded = true
@@ -169,14 +190,14 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
-[node name="score" parent="gui" instance=ExtResource( 9 )]
+[node name="score" parent="gui" instance=ExtResource( 10 )]
 
 margin/left = 32.0
 margin/top = 32.0
 margin/right = 61.6
 margin/bottom = 73.6
 
-[node name="best_time" parent="gui" instance=ExtResource( 9 )]
+[node name="best_time" parent="gui" instance=ExtResource( 10 )]
 
 anchor/left = 1
 anchor/right = 1
@@ -186,7 +207,7 @@ margin/right = 135.0
 margin/bottom = 67.0
 font = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "-" ]
 
-[node name="best_coins" parent="gui" instance=ExtResource( 9 )]
+[node name="best_coins" parent="gui" instance=ExtResource( 10 )]
 
 anchor/left = 1
 anchor/right = 1
