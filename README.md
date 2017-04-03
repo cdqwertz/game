@@ -1,5 +1,5 @@
-#Game
+# Game
 A game made with the [godot game engine](https://godotengine.org/). *WIP*
 
-###License
+### License
 See LICENSE.txt
