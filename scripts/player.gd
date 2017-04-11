@@ -7,10 +7,14 @@ var zoom = Vector2(1.5, 1.5)
 
 onready var particles = get_node("particles")
 onready var particles2 = get_node("particles2")
-onready var spawn = get_parent().get_node("spawn")
+onready var spawn = get_parent().get_node(spawn_name)
 onready var camera = get_node("Camera2D")
 
 export var is_level_editor = false
+export var action_jump = "jump"
+export var action_left = "left"
+export var action_right = "right"
+export var spawn_name = "spawn"
 
 func _ready():
 	set_fixed_process(true)
@@ -35,7 +39,7 @@ func _fixed_process(delta):
 		
 	if bodies.size() > 0:
 		if not(bodies.size() == 1 and bodies[0].is_in_group("not_climbable")):
-			if Input.is_action_pressed("jump"):
+			if Input.is_action_pressed(action_jump):
 				velocity.y = -300
 				particles.set_emitting(true)
 				particles2.set_emitting(false)
@@ -44,11 +48,11 @@ func _fixed_process(delta):
 	else:
 		particles2.set_emitting(false)
 	
-	if Input.is_action_pressed("left"):
+	if Input.is_action_pressed(action_left):
 		if velocity.x > 0:
 			velocity.x = 0
 		velocity.x += -10
-	elif Input.is_action_pressed("right"):
+	elif Input.is_action_pressed(action_right):
 		if velocity.x < 0:
 			velocity.x = 0
 		velocity.x += 10
@@ -58,7 +62,7 @@ func _fixed_process(delta):
 	set_linear_velocity(velocity)
 
 func _unhandled_input(event):
-	if not(jumps < 1) and event.is_action_pressed("jump"):
+	if not(jumps < 1) and event.is_action_pressed(action_jump):
 		var velocity = get_linear_velocity()
 		velocity.y = -300
 		jumps -= 1

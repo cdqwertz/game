@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://objects/block.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/block_orange.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/block_blue.tscn" type="PackedScene" id=3]
+
+[node name="world_3" type="Node2D"]
+
+[node name="block" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 256, 0 )
+transform/scale = Vector2( 9, 1 )
+
+[node name="block1" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1040, 0 )
+transform/scale = Vector2( 6.5, 1 )
+
+[node name="block3" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 256, 256 )
+transform/scale = Vector2( 9, 1 )
+
+[node name="block2" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 256, -256 )
+transform/scale = Vector2( 9, 1 )
+
+[node name="block4" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1040, -256 )
+transform/scale = Vector2( 6.5, 1 )
+
+[node name="block5" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 1040, 256 )
+transform/scale = Vector2( 6.5, 1 )
+
+[node name="block_orange" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 224, 192 )
+transform/scale = Vector2( 2, 1 )
+
+[node name="block_orange1" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 224, -64 )
+transform/scale = Vector2( 2, 1 )
+
+[node name="block_blue" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 688, 0 )
+transform/scale = Vector2( 4.5, 1 )
+
+[node name="block_blue2" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 688, 256 )
+transform/scale = Vector2( 4.5, 1 )
+
+[node name="block_blue1" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 688, -256 )
+transform/scale = Vector2( 4.5, 1 )
+
+

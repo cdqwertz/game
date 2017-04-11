@@ -1,16 +1,17 @@
-[gd_scene load_steps=13 format=1]
+[gd_scene load_steps=14 format=1]
 
 [ext_resource path="res://scripts/select_level.gd" type="Script" id=1]
-[ext_resource path="res://objects/start_level.tscn" type="PackedScene" id=2]
-[ext_resource path="res://objects/lever.tscn" type="PackedScene" id=3]
-[ext_resource path="res://objects/player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://objects/block.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objects/block_blue.tscn" type="PackedScene" id=6]
-[ext_resource path="res://objects/block_orange.tscn" type="PackedScene" id=7]
-[ext_resource path="res://objects/block_cyan.tscn" type="PackedScene" id=8]
-[ext_resource path="res://objects/block_purple.tscn" type="PackedScene" id=9]
-[ext_resource path="res://objects/block_green.tscn" type="PackedScene" id=10]
-[ext_resource path="res://objects/score.tscn" type="PackedScene" id=11]
+[ext_resource path="res://objects/start_game.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/start_level.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/lever.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/block.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/block_blue.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/block_orange.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/block_cyan.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objects/block_purple.tscn" type="PackedScene" id=10]
+[ext_resource path="res://objects/block_green.tscn" type="PackedScene" id=11]
+[ext_resource path="res://objects/score.tscn" type="PackedScene" id=12]
 
 [sub_resource type="LineShape2D" id=1]
 
@@ -22,157 +23,167 @@ d = 0.0
 
 script/script = ExtResource( 1 )
 
-[node name="start_1" parent="." instance=ExtResource( 2 )]
+[node name="start_game" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1408, 384 )
+game_name = "game_1"
+
+[node name="start_1" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 192, 128 )
 level_name = "level_1"
 
-[node name="start_2" parent="." instance=ExtResource( 2 )]
+[node name="start_2" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 512, 128 )
 number = "2"
 
-[node name="start_3" parent="." instance=ExtResource( 2 )]
+[node name="start_3" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 1056, -192 )
 number = "3"
 
-[node name="start_4" parent="." instance=ExtResource( 2 )]
+[node name="start_4" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 1632, 160 )
 number = "4"
 
-[node name="start_5" parent="." instance=ExtResource( 2 )]
+[node name="start_5" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 1888, 160 )
 number = "5"
 
-[node name="start_6" parent="." instance=ExtResource( 2 )]
+[node name="start_6" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 2432, -64 )
 number = "6"
 
-[node name="start_7" parent="." instance=ExtResource( 2 )]
+[node name="start_7" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 2784, -64 )
 number = "7"
 
-[node name="start_8" parent="." instance=ExtResource( 2 )]
+[node name="start_8" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 3360, -384 )
 number = "8"
 
-[node name="start_9" parent="." instance=ExtResource( 2 )]
+[node name="start_9" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 3616, -384 )
 number = "9"
 
-[node name="start_10" parent="." instance=ExtResource( 2 )]
+[node name="start_10" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 4128, -704 )
 number = "10"
 
-[node name="start_11" parent="." instance=ExtResource( 2 )]
+[node name="start_11" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 4672, -832 )
 number = "11"
 
-[node name="start_12" parent="." instance=ExtResource( 2 )]
+[node name="start_12" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 4960, -832 )
 number = "12"
 
-[node name="start_13" parent="." instance=ExtResource( 2 )]
+[node name="start_13" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 5504, -1024 )
 number = "13"
 
-[node name="lever" parent="." instance=ExtResource( 3 )]
+[node name="lever" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 2944, -64 )
 
-[node name="player" parent="." instance=ExtResource( 4 )]
+[node name="player" parent="." instance=ExtResource( 5 )]
 
 [node name="spawn" type="Node2D" parent="."]
 
-[node name="block" parent="." instance=ExtResource( 5 )]
+[node name="block" parent="." instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 192, 192 )
 transform/scale = Vector2( 15, 1 )
 
-[node name="block1" parent="." instance=ExtResource( 5 )]
+[node name="block1" parent="." instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 1088, -128 )
 transform/scale = Vector2( 6, 1 )
 
-[node name="block2" parent="." instance=ExtResource( 5 )]
+[node name="block2" parent="." instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 2672, 0 )
 transform/scale = Vector2( 9.5, 1 )
 
-[node name="block4" parent="." instance=ExtResource( 5 )]
+[node name="block8" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1408, 448 )
+transform/scale = Vector2( 5, 1 )
+
+[node name="block4" parent="." instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 1824, 224 )
 transform/scale = Vector2( 11, 1 )
 
-[node name="block3" parent="." instance=ExtResource( 5 )]
+[node name="block3" parent="." instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 3536, -320 )
 transform/scale = Vector2( 9.49999, 1 )
 
-[node name="block5" parent="." instance=ExtResource( 5 )]
+[node name="block5" parent="." instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 4064, -640 )
 transform/scale = Vector2( 7, 1 )
 
-[node name="block6" parent="." instance=ExtResource( 5 )]
+[node name="block6" parent="." instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 4816, -768 )
 transform/scale = Vector2( 8.50001, 1 )
 
-[node name="block7" parent="." instance=ExtResource( 5 )]
+[node name="block7" parent="." instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 5648, -960 )
 transform/scale = Vector2( 8.50001, 1 )
 
-[node name="block_blue" parent="." instance=ExtResource( 6 )]
+[node name="block_blue" parent="." instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 784, 192 )
 transform/scale = Vector2( 3.5, 1 )
 
-[node name="block_blue1" parent="." instance=ExtResource( 6 )]
+[node name="block_blue1" parent="." instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 3104, 16 )
 transform/scale = Vector2( 3.99999, 0.5 )
 
-[node name="block_blue2" parent="." instance=ExtResource( 6 )]
+[node name="block_blue2" parent="." instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 2272, 224 )
 transform/scale = Vector2( 3, 1 )
 
-[node name="block_orange" parent="." instance=ExtResource( 7 )]
+[node name="block_orange" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1376, -128 )
 transform/scale = Vector2( 3, 1 )
 
-[node name="block_cyan3" parent="." instance=ExtResource( 8 )]
+[node name="block_cyan3" parent="." instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 3104, -16 )
 transform/scale = Vector2( 4, 0.5 )
 always_on = false
 
-[node name="block_cyan" parent="." instance=ExtResource( 8 )]
+[node name="block_cyan" parent="." instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 3808, -512 )
 transform/scale = Vector2( 1, 5 )
 always_on = true
 
-[node name="block_purple" parent="." instance=ExtResource( 9 )]
+[node name="block_purple" parent="." instance=ExtResource( 10 )]
 
 transform/pos = Vector2( 4416, -768 )
 transform/scale = Vector2( 4, 1 )
 
-[node name="block_green" parent="." instance=ExtResource( 10 )]
+[node name="block_green" parent="." instance=ExtResource( 11 )]
 
 transform/pos = Vector2( 5232, -576 )
 transform/scale = Vector2( 4.50001, 1 )
@@ -201,19 +212,20 @@ _update_shape_index = 0
 
 [node name="gui" type="CanvasLayer" parent="."]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
-[node name="score" parent="gui" instance=ExtResource( 11 )]
+[node name="score" parent="gui" instance=ExtResource( 12 )]
 
 margin/left = 32.0
 margin/top = 32.0
 margin/right = 61.6
 margin/bottom = 73.6
 
-[node name="best_time" parent="gui" instance=ExtResource( 11 )]
+[node name="best_time" parent="gui" instance=ExtResource( 12 )]
 
 anchor/left = 1
 anchor/right = 1
@@ -223,7 +235,7 @@ margin/right = 135.0
 margin/bottom = 67.0
 font = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "-" ]
 
-[node name="best_coins" parent="gui" instance=ExtResource( 11 )]
+[node name="best_coins" parent="gui" instance=ExtResource( 12 )]
 
 anchor/left = 1
 anchor/right = 1
