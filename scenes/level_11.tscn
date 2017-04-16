@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://objects/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/gui.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://objects/block_red.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/end.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/coin.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/set_spawn.tscn" type="PackedScene" id=9]
 
 [node name="world" type="Node2D"]
 
@@ -97,11 +98,6 @@ transform/scale = Vector2( 4, 1 )
 transform/pos = Vector2( 1712, -64 )
 transform/scale = Vector2( 2.5, 1 )
 
-[node name="block_green1" parent="." instance=ExtResource( 5 )]
-
-transform/pos = Vector2( 2480, -1536 )
-transform/scale = Vector2( 2.5, 1 )
-
 [node name="block_green2" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 2480, -736 )
@@ -156,11 +152,15 @@ transform/scale = Vector2( 2.5, 1 )
 
 transform/pos = Vector2( 6080, -1536 )
 transform/scale = Vector2( 15, 1 )
+spin = false
+spin_speed = -60
 
 [node name="block_red1" parent="." instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 6080, -1792 )
 transform/scale = Vector2( 15, 1 )
+spin = false
+spin_speed = -60
 
 [node name="end" parent="." instance=ExtResource( 7 )]
 
@@ -226,5 +226,30 @@ transform/pos = Vector2( 9280, -1536 )
 [node name="coin13" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 7360, -1664 )
+
+[node name="set_spawn" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1376, -384 )
+transform/scale = Vector2( 8, 5 )
+
+[node name="set_spawn1" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 2656, -576 )
+transform/scale = Vector2( 8, 2 )
+
+[node name="set_spawn2" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 3936, -1696 )
+transform/scale = Vector2( 0.999998, 4 )
+
+[node name="set_spawn3" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 5376, -1664 )
+transform/scale = Vector2( 0.999998, 3 )
+
+[node name="set_spawn4" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 6688, -1664 )
+transform/scale = Vector2( 0.999998, 3 )
 
 

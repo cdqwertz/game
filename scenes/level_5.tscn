@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://objects/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/block.tscn" type="PackedScene" id=2]
@@ -9,14 +9,13 @@
 [ext_resource path="res://objects/gui.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/coin.tscn" type="PackedScene" id=8]
 [ext_resource path="res://objects/end_box.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objects/set_spawn.tscn" type="PackedScene" id=10]
 
 [node name="world" type="Node2D"]
 
 [node name="spawn" type="Node2D" parent="."]
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-
-is_level_editor = false
 
 [node name="block" parent="." instance=ExtResource( 2 )]
 
@@ -167,55 +166,77 @@ transform/scale = Vector2( 1, 4 )
 
 transform/pos = Vector2( 3632, -224 )
 transform/scale = Vector2( 3.5, 1 )
+spin = false
+spin_speed = -60
 
 [node name="block_red3" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 5216, -400 )
 transform/scale = Vector2( 0.999996, 2.5 )
+spin = false
+spin_speed = -60
 
 [node name="block_red1" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 6352, -1216 )
 transform/scale = Vector2( 4.5, 1 )
+spin = false
+spin_speed = -60
 
 [node name="block_red8" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 6608, -2304 )
 transform/scale = Vector2( 2.5, 1 )
+spin = false
+spin_speed = -60
 
 [node name="block_red12" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 6608, -1888 )
 transform/scale = Vector2( 2.5, 1 )
+spin = false
+spin_speed = -60
 
 [node name="block_red9" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 6064, -1728 )
 transform/scale = Vector2( 2.5, 1 )
+spin = false
+spin_speed = -60
 
 [node name="block_red10" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 6064, -2176 )
 transform/scale = Vector2( 2.5, 1 )
+spin = false
+spin_speed = -60
 
 [node name="block_red11" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 6288, -2656 )
 transform/scale = Vector2( 2.5, 1 )
+spin = false
+spin_speed = -60
 
 [node name="block_red2" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 6624, -1280 )
 transform/scale = Vector2( 2.00001, 1 )
+spin = false
+spin_speed = -60
 
 [node name="block_red4" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 7008, -2528 )
 transform/scale = Vector2( 2.00001, 1 )
+spin = false
+spin_speed = -60
 
 [node name="block_red7" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 6784, -2528 )
+spin = false
+spin_speed = -60
 
 [node name="block_blue" parent="." instance=ExtResource( 4 )]
 
@@ -342,5 +363,20 @@ transform/pos = Vector2( 3648, -128 )
 transform/pos = Vector2( 7008, -2240 )
 next_level = "res://scenes/level_6.tscn"
 level = 5
+
+[node name="set_spawn" parent="." instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 3136, -336 )
+transform/scale = Vector2( 1, 2.5 )
+
+[node name="set_spawn1" parent="." instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 3808, -384 )
+transform/scale = Vector2( 2, 2 )
+
+[node name="set_spawn2" parent="." instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 5792, -1648 )
+transform/scale = Vector2( 1, 10.5 )
 
 

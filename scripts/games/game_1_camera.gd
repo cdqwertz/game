@@ -13,6 +13,9 @@ func _process(delta):
 	var x = x_1
 	if x_2 > x:
 		x = x_2
+		
+	if abs(x_2 - x_1) > 64 * 4:
+		print("Done")
 	
 	set_pos(Vector2(x, 0))
 	

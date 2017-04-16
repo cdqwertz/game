@@ -89,3 +89,6 @@ func _unhandled_input(event):
 			get_tree().change_scene("res://scenes/select_level.tscn")
 		else:
 			get_tree().change_scene("res://scenes/level_editor.tscn")
+			
+	if event.is_action_pressed("set_spawn"):
+		spawn.set_pos(get_pos())
