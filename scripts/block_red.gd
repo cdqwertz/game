@@ -15,5 +15,4 @@ func _process(delta):
 	
 func body_enter(body):
 	if body.is_in_group("player"):
-		body.set_pos(body.spawn.get_pos())
-		body.set_linear_velocity(Vector2(0, 0))
+		body.respawn()

@@ -1,12 +1,27 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/player.png" type="Texture" id=2]
+[ext_resource path="res://sounds/jump_1.wav" type="Sample" id=3]
+[ext_resource path="res://sounds/respawn_1.wav" type="Sample" id=4]
+[ext_resource path="res://sounds/coin_1.wav" type="Sample" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
+
+[sub_resource type="SampleLibrary" id=2]
+
+samples/jump_1 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 3 ) }
+
+[sub_resource type="SampleLibrary" id=3]
+
+samples/respawn_1 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 4 ) }
+
+[sub_resource type="SampleLibrary" id=4]
+
+samples/coin_1 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 5 ) }
 
 [node name="player" type="RigidBody2D" groups=[ "player" ]]
 
@@ -124,5 +139,38 @@ drag_margin/left = 0.2
 drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
+
+[node name="sample_player_jump" type="SamplePlayer2D" parent="."]
+
+params/volume_db = 0.0
+params/pitch_scale = 0.9
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 2 )
+config/pitch_random = 0.6
+
+[node name="sample_player_respawn" type="SamplePlayer2D" parent="."]
+
+params/volume_db = 0.0
+params/pitch_scale = 0.9
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 3 )
+config/pitch_random = 0.0
+
+[node name="sample_player_coin" type="SamplePlayer2D" parent="."]
+
+params/volume_db = 0.0
+params/pitch_scale = 0.9
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 4 )
+config/pitch_random = 0.6
 
 

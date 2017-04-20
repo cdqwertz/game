@@ -10,6 +10,10 @@ onready var particles2 = get_node("particles2")
 onready var spawn = get_parent().get_node(spawn_name)
 onready var camera = get_node("Camera2D")
 
+onready var sample_player = get_node("sample_player_jump")
+onready var sample_player_respawn = get_node("sample_player_respawn")
+onready var sample_player_coin = get_node("sample_player_coin")
+
 export var is_level_editor = false
 export var action_jump = "jump"
 export var action_left = "left"
@@ -21,11 +25,15 @@ func _ready():
 	set_contact_monitor(true)
 	set_process_unhandled_input(true)
 	set_max_contacts_reported(4)
+	
+func respawn():
+	set_linear_velocity(Vector2(0, 0))
+	sample_player_respawn.play("respawn_1")
+	set_pos(spawn.get_pos())
 
 func _fixed_process(delta):
 	if get_pos().y > 1000:
-		set_linear_velocity(Vector2(0, 0))
-		set_pos(spawn.get_pos())
+		respawn()
 	
 	var velocity = get_linear_velocity()
 	
@@ -68,6 +76,8 @@ func _unhandled_input(event):
 		jumps -= 1
 		particles.set_emitting(true)
 		set_linear_velocity(velocity)
+		
+		sample_player.play("jump_1")
 	
 	if event.is_action_pressed("zoom_in"):
 		if zoom.x > 0.4 and zoom.y > 0.4:

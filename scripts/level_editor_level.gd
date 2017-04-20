@@ -7,7 +7,7 @@ var width = 32
 var height = 16
 
 func _ready():
-	for t in ["grey", "blue", "orange", "red", "cyan", "lever_off", "box", "end"]:
+	for t in ["grey", "blue", "orange", "red", "cyan", "lever_off", "box", "end", "green"]:
 		textures.append(load("res://sprites/" + t + ".png"))
 	
 	if not(global.get_level_editor_data().empty()):

@@ -13,6 +13,8 @@
 [ext_resource path="res://objects/block_green.tscn" type="PackedScene" id=11]
 [ext_resource path="res://objects/score.tscn" type="PackedScene" id=12]
 
+
+
 [sub_resource type="LineShape2D" id=1]
 
 custom_solver_bias = 0.0

@@ -10,6 +10,8 @@
 [ext_resource path="res://objects/gui.tscn" type="PackedScene" id=8]
 [ext_resource path="res://objects/set_spawn.tscn" type="PackedScene" id=9]
 
+
+
 [node name="world" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource( 1 )]

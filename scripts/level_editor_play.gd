@@ -3,7 +3,7 @@ extends Node2D
 
 func _ready():
 	var objects = []
-	for i in ["block", "block_blue", "block_orange", "block_red", "block_cyan", "lever", "box", "end"]:
+	for i in ["block", "block_blue", "block_orange", "block_red", "block_cyan", "lever", "box", "end", "block_green"]:
 		objects.append(load("res://objects/" + i + ".tscn"))
 	
 	var d = global.get_level_editor_data()
