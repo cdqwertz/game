@@ -1,0 +1,244 @@
+[gd_scene load_steps=8 format=1]
+
+[ext_resource path="res://objects/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/gui.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/block.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/block_blue.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/block_red.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/set_spawn.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/end.tscn" type="PackedScene" id=7]
+
+[node name="world" type="Node2D"]
+
+[node name="spawn" type="Node2D" parent="."]
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( -128, 32 )
+
+[node name="gui" parent="." instance=ExtResource( 2 )]
+
+[node name="block" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 3.05176e-05, 128 )
+transform/scale = Vector2( 14, 1 )
+
+[node name="block1" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 880, -192 )
+transform/scale = Vector2( 4.5, 1 )
+
+[node name="block2" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1568, -448 )
+transform/scale = Vector2( 8, 1 )
+
+[node name="block3" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 2640, -704 )
+transform/scale = Vector2( 25.5, 1 )
+
+[node name="block4" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 2416, -1056 )
+transform/scale = Vector2( 20.5, 1 )
+
+[node name="block5" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 3424, -1584 )
+transform/scale = Vector2( 1, 26.5 )
+
+[node name="block7" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 3360, -4032 )
+transform/scale = Vector2( 9, 1 )
+
+[node name="block15" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 3680, -4352 )
+transform/scale = Vector2( 9, 1 )
+
+[node name="block16" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 3360, -4672 )
+transform/scale = Vector2( 9, 1 )
+
+[node name="block9" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 3424, -3104 )
+transform/scale = Vector2( 0.999999, 7.00001 )
+
+[node name="block10" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 3040, -2656 )
+transform/scale = Vector2( 0.999999, 7 )
+
+[node name="block11" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 3040, -4160 )
+transform/scale = Vector2( 0.999999, 26 )
+
+[node name="block8" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 3712, -3680 )
+transform/scale = Vector2( 8, 1 )
+
+[node name="block12" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 4000, -4320 )
+transform/scale = Vector2( 1, 21 )
+
+[node name="block14" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 3520, -5024 )
+transform/scale = Vector2( 16, 0.999996 )
+
+[node name="block6" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 3040, -1536 )
+transform/scale = Vector2( 1, 14 )
+
+[node name="block_blue" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 592, 128 )
+transform/scale = Vector2( 4.5, 1 )
+
+[node name="block_blue1" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1168, -192 )
+transform/scale = Vector2( 4.5, 1 )
+
+[node name="block_blue2" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1792, -608 )
+transform/scale = Vector2( 1, 4 )
+
+[node name="block_blue4" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 3040, -2208 )
+transform/scale = Vector2( 1, 7 )
+
+[node name="block_blue6 2" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 3040, -3104 )
+transform/scale = Vector2( 1, 7 )
+
+[node name="block_blue5" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 3424, -2656 )
+transform/scale = Vector2( 1, 7 )
+
+[node name="block_blue6" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 3424, -3520 )
+transform/scale = Vector2( 1, 6 )
+
+[node name="block_red" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 592, -192 )
+transform/scale = Vector2( 4.5, 1 )
+spin = true
+spin_speed = -60
+
+[node name="block_red1" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1168, -448 )
+transform/scale = Vector2( 4.5, 1 )
+spin = true
+spin_speed = 60
+
+[node name="block_red2" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1792, -880 )
+transform/scale = Vector2( 1, 4.5 )
+spin = true
+spin_speed = -55
+
+[node name="block_red3" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 2336, -880 )
+transform/scale = Vector2( 1, 4.5 )
+spin = true
+spin_speed = -60
+
+[node name="block_red4" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 2784, -880 )
+transform/scale = Vector2( 1, 4.5 )
+spin = true
+spin_speed = -65
+
+[node name="block_red5" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 3232, -1600 )
+transform/scale = Vector2( 5, 0.999998 )
+spin = true
+spin_speed = -70
+
+[node name="block_red6" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 3808, -4032 )
+transform/scale = Vector2( 5, 0.999998 )
+spin = true
+spin_speed = -70
+
+[node name="block_red7" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 3232, -4352 )
+transform/scale = Vector2( 5, 0.999998 )
+spin = true
+spin_speed = 100
+
+[node name="block_red8" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 3840, -4672 )
+transform/scale = Vector2( 4, 0.999998 )
+spin = true
+spin_speed = -180
+
+[node name="set_spawn" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1440, -800 )
+transform/scale = Vector2( 1, 10 )
+
+[node name="set_spawn3" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 864, -384 )
+transform/scale = Vector2( 1, 5 )
+
+[node name="set_spawn1" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 2080, -880 )
+transform/scale = Vector2( 0.999999, 4.5 )
+
+[node name="set_spawn2" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 3232, -1056 )
+transform/scale = Vector2( 5, 1 )
+
+[node name="set_spawn4" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 3488, -3856 )
+transform/scale = Vector2( 0.999999, 4.5 )
+
+[node name="set_spawn5" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 3520, -4192 )
+transform/scale = Vector2( 0.999999, 4 )
+
+[node name="set_spawn6" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 3520, -4512 )
+transform/scale = Vector2( 0.999999, 3.99999 )
+
+[node name="set_spawn7" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 3520, -4848 )
+transform/scale = Vector2( 0.999999, 4.49999 )
+
+[node name="end" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 3136, -4736 )
+level = 14
+
+

@@ -13,8 +13,6 @@
 [ext_resource path="res://objects/block_green.tscn" type="PackedScene" id=11]
 [ext_resource path="res://objects/score.tscn" type="PackedScene" id=12]
 
-
-
 [sub_resource type="LineShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -94,6 +92,11 @@ number = "12"
 
 transform/pos = Vector2( 5504, -1024 )
 number = "13"
+
+[node name="start_14" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 5792, -1024 )
+number = "14"
 
 [node name="lever" parent="." instance=ExtResource( 4 )]
 
